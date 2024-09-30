@@ -1,0 +1,254 @@
+.app-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.nes-container {
+  width: 100vw;
+}
+
+.App {
+  text-align: center;
+  overflow: auto;
+}
+
+.message-bar {
+  margin: 1vh;
+}
+
+.battle {
+  background-color: beige;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.pokemon-selection,
+.battle {
+  margin-top: 20px;
+}
+
+.pokemon-list button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.pokemon-status {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: blue;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.pokemon-status div img.attacking {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+.life-bar-container {
+  width: 100px;
+  height: 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  margin: 5px auto;
+  position: relative;
+}
+
+.life-bar {
+  height: 100%;
+  background-color: #a55233;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+li {
+  list-style: none;
+  text-align: start;
+  border-bottom: 1px solid gray;
+  padding: 2px;
+  font-size: 13px;
+}
+
+.attack-logs {
+  width: 50%;
+  height: 90vh;
+  overflow: auto;
+}
+
+.pokemon-info {
+  display: flex;
+  align-items: center;
+}
+
+.attack-options-data {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* width media query */
+@media only screen and (max-width: 700px) {
+  .pokemon-status {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  .pokemon-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .battle {
+    display: flex;
+    height: 50vh;
+  }
+}
+
+/* height media query */
+@media only screen and (max-height: 750px) {
+  img {
+    width: 75px;
+    height: 75px;
+  }
+
+  h1 {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 8px;
+  }
+
+  h3 {
+    font-size: 6px;
+  }
+
+  .battle {
+    display: flex;
+    height: 50vh;
+  }
+
+  button {
+    width: 15vw;
+    height: 10vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    font-size: xx-small;
+  }
+
+  .nes-pokeball {
+    display: none;
+  }
+
+  span {
+    display: none;
+  }
+
+  .nes-btn {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .pokemon-status {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .is-error {
+    font-size: 10px;
+  }
+
+  .pokemon-list button {
+    margin: 10px;
+    padding: 0px;
+    font-size: 10px;
+  }
+
+  .nes-mario,
+  .nes-ash {
+    display: none;
+  }
+
+  .nes-btn {
+    padding: 0;
+  }
+}
