@@ -18,6 +18,7 @@ export default function App() {
   const base_url = "https://pokeapi.co/api/v2";
 
   useEffect(() => {
+    document.body.style.zoom = "90%";
     getPokemon(); // Fetch Pokemon data on app load
   }, []);
 
@@ -68,8 +69,12 @@ export default function App() {
 
         pokemonAttacks.push({
           name: attackRes.name,
-          damage: Math.round(attackRes.power / 5) || 0,
-          uses: attackRes.pp || 0,
+          // damage is calculated by a lot many factors in real world game,
+          // for simplicity the usual high damage levels are rounded to 20% of original value, it is compatible to an intersting game
+          damage: Math.round(attackRes.power / 10) || 0,
+
+          // doing below calculation to reduce the number of uses to a practical game level to make it interesting
+          uses: attackRes.pp % 10 < 5 ? 10 : attackRes.pp,
           accuracy: parseFloat((attackRes.accuracy / 100).toFixed(1)),
         });
       }
@@ -174,7 +179,7 @@ export default function App() {
     let commentary = "";
 
     if (playerDamage > 10) {
-      commentary = "It's super Effective";
+      commentary = "Effective!";
     }
     if (playerAttack?.name == "Confusion" && Math.random() < 0.5) {
       commentary += `The opponent ${opponentPokemon.name} is confused!`;
@@ -258,7 +263,7 @@ export default function App() {
     let commentary = "";
 
     if (opponentDamage > 10) {
-      commentary = "It's super Effective";
+      commentary = "Effective!";
     }
     if (selectedAttack?.name == "Confusion" && Math.random() < 0.5) {
       commentary += `Your ${playerPokemon.name} is confused!`;

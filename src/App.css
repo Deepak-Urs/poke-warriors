@@ -1,11 +1,20 @@
-.app-wrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+.root {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100vw !important;
+  height: 100vw !important;
 }
 
 .nes-container {
   width: 100vw;
+}
+
+.app-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App {
@@ -15,6 +24,7 @@
 
 .message-bar {
   margin: 1vh;
+  text-align: center;
 }
 
 .battle {
@@ -41,9 +51,10 @@
 
 .pokemon-status {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  /* margin-bottom: 20px; */
   color: blue;
+  width: 100vw;
 }
 
 .message {
@@ -185,17 +196,17 @@ li {
   }
 
   h1 {
-    font-size: 10px;
+    font-size: 12px;
     padding: 0;
     margin: 0;
   }
 
   h2 {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   h3 {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .battle {
